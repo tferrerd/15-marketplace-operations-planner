@@ -1,0 +1,42 @@
+{
+  "dataset": "NYC TLC yellow taxi trips, January 2023",
+  "source_urls": [
+    "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+    "https://d37ci6vzurychx.cloudfront.net/trip-data/yellow_tripdata_2023-01.parquet"
+  ],
+  "license": "NYC Open Data terms / public TLC records",
+  "license_url": "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page",
+  "selection": "Systematic source-order sample: every 50th row, starting at row 0, from 3,066,766 source records. Original source fields retained; this is not the complete month.",
+  "notes": "Attribution: NYC Taxi and Limousine Commission and reporting providers. Parquet converted to CSV without invented trips. Completed pickups are a sampled activity proxy, not full demand counts or observations of available supply/unserved demand. Account for sampling when aggregating; one month limits temporal generalization. Timestamp anomalies and other source-quality problems are retained for audit.",
+  "generated_at_utc": "2026-10-17T20:55:36.609858+00:00",
+  "files": [
+    {
+      "path": "data/raw/yellow_taxi_2023_01_sample.csv",
+      "rows": 61336,
+      "columns": [
+        "VendorID",
+        "tpep_pickup_datetime",
+        "tpep_dropoff_datetime",
+        "passenger_count",
+        "trip_distance",
+        "RatecodeID",
+        "store_and_fwd_flag",
+        "PULocationID",
+        "DOLocationID",
+        "payment_type",
+        "fare_amount",
+        "extra",
+        "mta_tax",
+        "tip_amount",
+        "tolls_amount",
+        "improvement_surcharge",
+        "total_amount",
+        "congestion_surcharge",
+        "airport_fee"
+      ],
+      "bytes": 6439393,
+      "sha256": "707f2c4c881a85c0940177fd5ca5eb09edd19f55559ae008eb350704de418e27"
+    }
+  ],
+  "assets": []
+}

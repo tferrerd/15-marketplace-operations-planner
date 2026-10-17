@@ -2,9 +2,21 @@
 
 - **Application:** Operational optimization
 - **Portfolio project:** 15 of 15
-- **Status:** Project brief defined. Dataset acquisition, ML, application and MLOps implementation have not started.
+- **Status:** Source-derived CSV data is committed. ML models, the application and MLOps remain to be implemented.
 
 Part of [Tomas Ferrer's DS/ML portfolio](https://tomasferrer.com/).
+
+## Committed CSV dataset
+
+**Dataset:** NYC TLC yellow taxi trips, January 2023
+
+**Coverage:** Systematic source-order sample: every 50th row, starting at row 0, from 3,066,766 source records. Original source fields retained; this is not the complete month.
+
+| CSV file | Rows |
+|---|---:|
+| [yellow_taxi_2023_01_sample.csv](data/raw/yellow_taxi_2023_01_sample.csv) | 61,336 |
+
+These are actual published observations or documented format conversions. See [source, license and limitations](data/DATASET.md) and [CSV schemas/checksums](data/csv-manifest.json).
 
 ## Project prompt
 
@@ -20,11 +32,9 @@ Write a short project charter defining the user, current baseline, primary busin
 
 ### Published dataset and raw data
 
-A pinned historical period of [NYC TLC trip records](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) and zone metadata. This repository owns the source acquisition and local training/evaluation pipeline. Completed trips are observed activity; unmet demand and available fleet capacity are not supplied ground truth.
+The committed source is **NYC TLC yellow taxi trips, January 2023**. Systematic source-order sample: every 50th row, starting at row 0, from 3,066,766 source records. Original source fields retained; this is not the complete month. See [dataset documentation](data/DATASET.md) for original links, attribution, usage terms and limitations.
 
-**Additional source/access notes:** Pin a historical period and schema; choose a volume that supports multiple temporal folds. Train a local demand proxy, then optimize an allocation scenario. Trips do not observe unmet demand or available fleet capacity; service improvements remain scenario estimates
-
-Acquire a pinned source release into `data/raw/` and preserve the original bytes. Add a repeatable acquisition script and a manifest containing source URL, release/version, retrieval time, citation, terms, file sizes and SHA-256 checksums. Keep cleaned data in `data/interim/` and model-ready features/split assignments in `data/processed/`. Raw data stay out of Git unless redistribution is explicitly appropriate.
+Acquire a pinned source release into `data/raw/` and preserve the original bytes. Add a repeatable acquisition script and a manifest containing source URL, release/version, retrieval time, citation, terms, file sizes and SHA-256 checksums. Keep cleaned data in `data/interim/` and model-ready features/split assignments in `data/processed/`. Redistributable CSV exports and the documented supporting assets are committed; large source archives remain excluded from Git.
 
 Audit labels, decision-time feature availability, duplicates, missingness, class balance, and temporal/group structure. If the candidate cannot support the task or intended use, find another suitable published dataset or narrow the question. Generated fixtures and economic scenarios are supplementary, clearly labeled artifacts.
 
@@ -75,7 +85,7 @@ Use the smallest architecture that completes this lifecycle. Select real-time or
 
 ## Completion checklist
 
-- [ ] Published source acquired, checksum verified and provenance/profile recorded.
+- [x] Published source acquired, checksum verified and provenance/profile recorded.
 - [ ] Data audit, project charter, success criteria and evaluation protocol complete.
 - [ ] Baseline and trained ML component evaluated; artifacts and failure analysis saved.
 - [ ] Working application deployed with the exact evaluated model version.
@@ -84,4 +94,4 @@ Use the smallest architecture that completes this lifecycle. Select real-time or
 
 ## Current implementation
 
-This repository currently contains the implementation brief and Git exclusions. The dataset links identify starting sources; acquisition and model results will be documented as implementation proceeds.
+Published dataset observations, CSV exports, supporting assets where applicable, and provenance/checksum documentation are present. Models, application functionality and MLOps have not been implemented or evaluated yet.
